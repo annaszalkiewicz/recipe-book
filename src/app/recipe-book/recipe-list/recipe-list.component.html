@@ -3,16 +3,25 @@
     <button class="btn btn-success">New Recipe</button>
   </div>
 </div>
+<hr>
 <div class="row">
   <div class="col-xs-12 list-group">
-    <a href="#" class="list-group-item clearfix">
+    <a
+    href="#"
+    class="list-group-item clearfix"
+    *ngFor="let recipe of recipes"
+    >
       <div class="flex">
         <div>
-          <h2 class="mb-1">Recipe Name</h2>
-          <p class="mb-1">Description</p>
+          <h2 class="mb-1">{{ recipe.name }}</h2>
+          <p class="mb-1">{{ recipe.description }}</p>
         </div>
         <div>
-          <img src="" alt="" class="img-fluid" style="height: 50px">
+          <img
+          src="{{ recipe.imageUrl }}"
+          alt="{{ recipe.name }}"
+          class="img-fluid"
+          style="height: 50px;" />
         </div>
       </div>
     </a>

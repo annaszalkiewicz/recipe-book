@@ -1,10 +1,10 @@
 <section id="recipes">
   <div class="row">
     <div class="col-xs-12 col-md-5">
-      <app-recipe-list></app-recipe-list>
+      <app-recipe-list (selectedRecipe)="currentRecipe = $event"></app-recipe-list>
     </div>
     <div class="col-xs-12 col-md-7">
-      <app-recipe-details></app-recipe-details>
+      <app-recipe-details *ngIf="currentRecipe"></app-recipe-details>
     </div>
   </div>
 </section>

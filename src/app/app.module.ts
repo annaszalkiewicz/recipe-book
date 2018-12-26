@@ -19,7 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     ShoppingListComponent,
     RecipeDetailsComponent,
     ShoppingEditComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule

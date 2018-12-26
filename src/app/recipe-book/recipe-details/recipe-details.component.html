@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="card">
-      <img src="https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="card-img-top">
+      <img [src]="recipe.imageUrl" [alt]="recipe.name" class="card-img-top">
       <div class="card-body">
-        <h2 class="card-title">Recipe Name</h2>
+        <h2 class="card-title">{{ recipe.name }}</h2>
         <div class="btn-group" role="group" aria-label="Button dropdown">
           <button class="btn btn-primary dropdown-toggle" id="btnGroupDrop1" type="button" data-toggle="dropdown">Manage Recipe</button>
           <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -12,7 +12,7 @@
             <a class="dropdown-item" href="#">Delete Recipe</a>
           </div>
         </div>
-        <div class="card-text">Description</div>
+        <div class="card-text">{{ recipe.description }}</div>
         <div class="card-text">Ingredients</div>
       </div>
     </div>

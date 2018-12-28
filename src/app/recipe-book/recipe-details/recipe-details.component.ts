@@ -15,4 +15,13 @@ export class RecipeDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick() {
+    const dropdown = document.getElementById('dropdown-open');
+    if (dropdown.classList.contains('show')) {
+      dropdown.classList.remove('show');
+    } else {
+      dropdown.classList.add('show');
+    }
+  }
+
 }

@@ -4,9 +4,18 @@
       <img [src]="recipe.imageUrl" [alt]="recipe.name" class="card-img-top">
       <div class="card-body">
         <h2 class="card-title">{{ recipe.name }}</h2>
-        <div class="btn-group" role="group" aria-label="Button dropdown">
-          <button class="btn btn-primary dropdown-toggle" id="btnGroupDrop1" type="button" data-toggle="dropdown">Manage Recipe</button>
-          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <div
+        class="btn-group"
+        role="group"
+        aria-label="Button dropdown"
+        (click)="onClick()"
+        appDropdown>
+          <button class="btn btn-primary dropdown-toggle" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-expanded="true">Manage Recipe</button>
+          <div
+          class="dropdown-menu"
+          id="dropdown-open"
+          aria-labelledby="btnGroupDrop1"
+          >
             <a class="dropdown-item" href="#">To Shopping List</a>
             <a class="dropdown-item" href="#">Edit Recipe</a>
             <a class="dropdown-item" href="#">Delete Recipe</a>

@@ -18,4 +18,14 @@ export class HeaderComponent implements OnInit {
     this.featureSelected.emit(feature);
   }
 
+  onClick() {
+    const dropdown = document.getElementById('dropdown-nav');
+    if (dropdown.classList.contains('show')) {
+      dropdown.classList.remove('show');
+    } else {
+      dropdown.classList.add('show');
+    }
+  }
+
+
 }

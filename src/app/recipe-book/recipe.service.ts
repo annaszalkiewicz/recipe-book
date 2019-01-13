@@ -1,10 +1,13 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable, OnInit, EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService implements OnInit {
+
+  selectedRecipe = new EventEmitter<Recipe>();
+
   private recipes: Recipe[] = [
     new Recipe(
       'Test Recipe Name 1',

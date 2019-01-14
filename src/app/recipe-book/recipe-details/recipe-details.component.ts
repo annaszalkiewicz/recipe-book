@@ -1,3 +1,5 @@
+import { Ingredient } from './../../shared/ingredient.model';
+import { RecipeService } from './../recipe.service';
 import { Recipe } from './../recipe.model';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -10,7 +12,7 @@ export class RecipeDetailsComponent implements OnInit {
 
   @Input() recipe: Recipe;
 
-  constructor() { }
+  constructor(private recipeservice: RecipeService) { }
 
   ngOnInit() {
   }
@@ -22,6 +24,10 @@ export class RecipeDetailsComponent implements OnInit {
     } else {
       dropdown.classList.add('show');
     }
+  }
+
+  onAddToShoppingList() {
+    this.recipeservice.addToShoppingList(this.recipe.ingredients);
   }
 
 }

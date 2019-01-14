@@ -22,7 +22,14 @@
           </div>
         </div>
         <div class="card-text">{{ recipe.description }}</div>
-        <div class="card-text">Ingredients</div>
+        <div class="card-text">
+          <ul class="list-group">
+            <li
+            class="list-group-item"
+            *ngFor="let ingredient of recipe.ingredients"
+            >{{ ingredient.name }} - {{ ingredient.amount }}</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

@@ -51,6 +51,15 @@ export class RecipeService implements OnInit {
     return this.recipes.slice();
   }
 
+  getRecipe(id: string) {
+    const recipe = this.recipes.find(
+      (r) => {
+        return r.id === id;
+      }
+    );
+    return recipe;
+  }
+
   addToShoppingList(ingredients: Ingredient[]) {
     this.shoppingListService.addIngredients(ingredients);
   }

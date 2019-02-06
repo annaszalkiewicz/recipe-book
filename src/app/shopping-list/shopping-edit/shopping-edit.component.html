@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <form #f="ngForm">
+    <form #f="ngForm" (ngSubmit)="onSubmit()" >
       <div class="row">
         <div class="col-xs-8 form-group">
           <label for="name">Name</label>
@@ -8,8 +8,11 @@
             type="text"
             id="name"
             class="form-control"
-            #nameInput
-          >
+            name="ingredient"
+            ngModel
+            required
+            ingredient
+            #ingredient="ngModel">
         </div>
         <div class="col-xs-4 form-group">
           <label for="amount">Amount</label>
@@ -17,8 +20,11 @@
             type="number"
             id="amount"
             class="form-control"
-            #amountInput
-          >
+            name="amount"
+            ngModel
+            required
+            amount
+            #amount="ngModel">
         </div>
       </div>
       <div class="row">

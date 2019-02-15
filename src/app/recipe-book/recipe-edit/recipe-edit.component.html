@@ -44,25 +44,23 @@
     <label for="ingredient">Ingredients:</label>
     <div
       class="row form-group"
-      *ngFor="let ingredientControl of getControls(); let i of index"
-      [formGroupName]="i">
-      <div
-        class="col-8">
+      *ngFor="let ingredientControl of getControls(); let i = index"
+      [formGroupName]="i"
+    >
+      <div class="col-8">
         <input
           type="text"
-          name="ingredient"
           id="ingredient"
           class="form-control"
           formControlName="ingredientName"
-        />
+        >
       </div>
       <div class="col-2">
         <input
           type="number"
-          name="amount"
-          id="amount"
           class="form-control"
-          formControlName="ingredientAmount">
+          formControlName="ingredientAmount"
+        >
       </div>
       <div class="col-2">
         <button class="btn btn-danger" type="button">X</button>

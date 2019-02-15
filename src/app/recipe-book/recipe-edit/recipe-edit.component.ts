@@ -25,12 +25,13 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
-  initForm() {
+  private initForm() {
 
     let recipeName = '';
     let recipeImageUrl = '';
     let recipeDescription = '';
-    const recipeIngredients = new FormArray([]);
+    // tslint:disable-next-line:prefer-const
+    let recipeIngredients = new FormArray([]);
 
     if (this.editMode) {
       const recipe = this.recipeService.getRecipe(this.id);
@@ -39,21 +40,22 @@ export class RecipeEditComponent implements OnInit {
       recipeImageUrl = recipe.imageUrl;
       recipeDescription = recipe.description;
       if (recipe['ingredients']) {
-        for (const ingredient of recipe.ingredients) {
+        // tslint:disable-next-line:prefer-const
+        for (let ingredient of recipe.ingredients) {
           recipeIngredients.push(
             new FormGroup({
               'ingredientName': new FormControl(ingredient.name),
               'ingredientAmount': new FormControl(ingredient.amount)
             })
-          )
+          );
         }
       }
     }
     this.recipeForm = new FormGroup({
-      name: new FormControl(recipeName),
-      imageUrl: new FormControl(recipeImageUrl),
-      description: new FormControl(recipeDescription),
-      ingredients: recipeIngredients
+      'name': new FormControl(recipeName),
+      'imageUrl': new FormControl(recipeImageUrl),
+      'description': new FormControl(recipeDescription),
+      'ingredients': recipeIngredients
     });
   }
 

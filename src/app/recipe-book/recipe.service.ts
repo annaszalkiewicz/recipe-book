@@ -13,7 +13,6 @@ export class RecipeService implements OnInit {
 
   private recipes: Recipe[] = [
     new Recipe(
-      'recipe-1',
       'Test Recipe Name 1',
       'This is test recipe description',
       'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
@@ -23,7 +22,6 @@ export class RecipeService implements OnInit {
       ]
     ),
     new Recipe(
-      'recipe-2',
       'Test Recipe Name 2 ',
       'This is test recipe description',
       'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
@@ -33,7 +31,6 @@ export class RecipeService implements OnInit {
       ]
     ),
     new Recipe(
-      'recipe-3',
       'Test Recipe Name 3',
       'This is test recipe description',
       'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
@@ -52,13 +49,8 @@ export class RecipeService implements OnInit {
     return this.recipes.slice();
   }
 
-  getRecipe(id: string) {
-    const recipe = this.recipes.find(
-      (r) => {
-        return r.id === id;
-      }
-    );
-    return recipe;
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addToShoppingList(ingredients: Ingredient[]) {
@@ -70,7 +62,7 @@ export class RecipeService implements OnInit {
     this.recipesChanged.next(this.recipes.slice());
   }
 
-  updateRecipe(index: number, newRecipe: Recipe ) {
+  updateRecipe(index: number, newRecipe: Recipe) {
     this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice());
   }

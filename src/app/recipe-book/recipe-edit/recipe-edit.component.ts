@@ -10,7 +10,7 @@ import { RecipeService } from './../recipe.service';
   styleUrls: ['./recipe-edit.component.css']
 })
 export class RecipeEditComponent implements OnInit {
-  id: string;
+  id: number;
   editMode = false;
   recipeForm: FormGroup;
   index: number;
@@ -69,7 +69,7 @@ export class RecipeEditComponent implements OnInit {
 
   onSubmit() {
     if (this.editMode) {
-      this.recipeService.updateRecipe(this.index, this.recipeForm.value);
+      this.recipeService.updateRecipe(this.id, this.recipeForm.value);
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }

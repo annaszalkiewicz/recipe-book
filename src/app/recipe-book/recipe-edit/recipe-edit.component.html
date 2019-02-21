@@ -31,10 +31,11 @@
       id="imageUrl"
       class="form-control"
       formControlName="imageUrl"
+      #imageUrl
     />
   </div>
   <div class="row">
-    <img src="" alt="" class="img-fluid" />
+    <img [src]="imageUrl.value" alt="" class="img-fluid image-preview" />
   </div>
   <div class="form-group">
     <label for="description">Recipe description:</label>

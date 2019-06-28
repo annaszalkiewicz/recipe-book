@@ -11,35 +11,37 @@ export class RecipeService implements OnInit {
 
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe(
-      'Test Recipe Name 1',
-      'This is test recipe description',
-      'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-      [
-        new Ingredient('Fleur', 1),
-        new Ingredient('Eggs', 3)
-      ]
-    ),
-    new Recipe(
-      'Test Recipe Name 2 ',
-      'This is test recipe description',
-      'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-      [
-        new Ingredient('Cocoa', 1),
-        new Ingredient('Milk', 3)
-      ]
-    ),
-    new Recipe(
-      'Test Recipe Name 3',
-      'This is test recipe description',
-      'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('Bread', 2)
-      ]
-    )
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'Test Recipe Name 1',
+  //     'This is test recipe description',
+  //     'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+  //     [
+  //       new Ingredient('Fleur', 1),
+  //       new Ingredient('Eggs', 3)
+  //     ]
+  //   ),
+  //   new Recipe(
+  //     'Test Recipe Name 2 ',
+  //     'This is test recipe description',
+  //     'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+  //     [
+  //       new Ingredient('Cocoa', 1),
+  //       new Ingredient('Milk', 3)
+  //     ]
+  //   ),
+  //   new Recipe(
+  //     'Test Recipe Name 3',
+  //     'This is test recipe description',
+  //     'https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+  //     [
+  //       new Ingredient('Meat', 1),
+  //       new Ingredient('Bread', 2)
+  //     ]
+  //   )
+  // ];
+
+  private recipes: Recipe[] = [];
 
   constructor(private shoppingListService: ShoppingListService) {}
 

@@ -1,4 +1,3 @@
-import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,6 +5,8 @@ import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.co
 import { RecipeDetailsComponent } from './recipe-book/recipe-details/recipe-details.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
+import { RecipeResolverService } from './recipe-book/recipe-resolver.service';
+import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 
 const appRoutes: Routes = [
   {
@@ -27,11 +28,13 @@ const appRoutes: Routes = [
       },
       {
         path: ':id',
-        component: RecipeDetailsComponent
+        component: RecipeDetailsComponent,
+        resolve: [RecipeResolverService]
       },
       {
         path: ':id/edit',
-        component: RecipeEditComponent
+        component: RecipeEditComponent,
+        resolve: [RecipeResolverService]
       },
     ]
   },
